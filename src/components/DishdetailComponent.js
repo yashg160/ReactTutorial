@@ -1,26 +1,26 @@
 import React, {Component} from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Input, Label, Row, Col } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Label, Row, Col } from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {Control, LocalForm, Errors} from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import {baseUrl} from '../shared/baseUrl';
-import {FadeTransform, Fade, Stagger} from 'react-animation-components';
+import {FadeTransform, Fade} from 'react-animation-components';
 
 function RenderComments({ comments, postComment, dishId }) {
         console.log(comments);
         if (comments != null) {
                 var commentsBlock = comments.map((c) => {
                         return (
-                                <Stagger in>
+                                
                                 <CardText className="col-12">
                                         <p>{c.comment}</p>
                                         <p>--{c.author}, {new Intl.DateTimeFormat('en-US', { year: "numeric", month: "short", day: "2-digit" }).format(new Date(Date.parse(c.date)))}</p>
                                 </CardText>
-                                </Stagger>
+                                
                                 
                         )
                 });
-
+               
                 return (
                         <div>
                                 {commentsBlock}
